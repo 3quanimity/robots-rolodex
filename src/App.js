@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { SearchBox } from "./components/search-box/search-box";
 import { CardList } from "./components/card-list/card-list";
 import "./App.css";
 
@@ -8,6 +9,7 @@ class App extends Component {
 
     this.state = {
       robots: [],
+      searchField: "",
     };
   }
 
@@ -18,12 +20,23 @@ class App extends Component {
   }
 
   render() {
+    const { robots, searchField } = this.state;
+    const filteredRobots = robots.filter((robot) =>
+      robot.name.toLowerCase().includes(searchField.toLowerCase())
+    );
+
     return (
       <div className="App">
-        <CardList robots={this.state.robots} />
+        <SearchBox
+          placeholder="search robots"
+          handleChange={(e) => this.setState({ searchField: e.target.value })}
+        />
+        <CardList robots={filteredRobots} />
       </div>
     );
   }
 }
 
 export default App;
+
+// Reached 20. Exercise Breaking Into Components
