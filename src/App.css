@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+h1 {
+  /* font-family: "Permanent Marker", cursive; */
+  font-family: "Bungee Inline", cursive;
+  font-size: 48px;
+  color: #0ccac4;
+}
+
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +43,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
